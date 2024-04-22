@@ -21,8 +21,22 @@ def airlines():
             print()
             read_csv('./csc365-lab2_datasets/AIRLINES/flights.csv', 'flights')
 
+def bakery():
+    with open('BAKERY-populate.sql', 'w') as output_file:
+        with redirect_stdout(output_file):
+            read_csv('./csc365-lab2_datasets/BAKERY/customers.csv', 'customers')
+            print()
+            read_csv('./csc365-lab2_datasets/BAKERY/goods.csv', 'goods')
+            print()
+            # Update this to use the correct date format from online DB
+            read_csv('./csc365-lab2_datasets/BAKERY/receipts.csv', 'receipts')
+            print()
+            read_csv('./csc365-lab2_datasets/BAKERY/items.csv', 'items')
+    
+
 def main():
-    airlines()
+    # airlines()
+    bakery()
 
 if __name__ == "__main__":
     main()
