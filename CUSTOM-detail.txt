@@ -1,0 +1,25 @@
+a. Data Source: 
+    The information for the data set was recieved from Kaggle (https://www.kaggle.com/datasets/rohanrao/formula-1-world-championship-1950-2020).
+    It contains data from the start of F1 in 1950 till 2023. The data was recieved via the Ergast API and uploaded by a user on Kaggle.
+    The source of the data is the F1 races that have taken place over the years
+
+b. Table Descriptions:
+    1. constructors --> This table has information about the various constructors that have competed throughout F1's history. 
+    2. drivers --> This contains all the drivers in F1 history
+    3. circuits --> this is a table of the various race tracks that have been used all over the globe
+    4. races --> this is a list of races. It has a forigen key for the circuit id becuase a race must take place on an FIA approved circuit
+    5. LapTime --> This is a table of all the lap times set by drivers. There are two foreign keys here: one of the driver and one for the race they set the time in
+    6. PitStops --> This is a table of all the pit stops that each driver underwent during each race. There are two foreign keys here: one of the driver and one for the race they set the time in
+    7. Qualifying --> this is a table with the qualifying position of the driver and the team they were a part of. There are two foreign keys here: one of the driver and one for their team (the constructor)
+
+    Note: there are comments in the CUSTOM-setup.sql file with info about the specific colums
+
+c. There were a bunch of mapping challanges. For instance with the numbers of the drivers some of them had a '/N' which made it so the number field couldn't actually be a number value.
+    Additionally, due to mapping issues, the addition of the results table wasn't added becuase there were some outlying values as a result of things like people not finishing.
+    Finally, I had to reduce the number of columns in each table becuase there was too much additional information.
+    Moving forward, more data tables can be added in as there is infomation about a bunch of other aspects of F1.
+
+d. Unique Requests:
+    1. Which constructor typically has the most pit stops per race --> could imply a weaker car
+    2. Which circuits require the most pit stops on average --> can help determine tire management strats
+    3. As time has progressed how much has the lap times on each circuit changes --> shows growth of the sport over time

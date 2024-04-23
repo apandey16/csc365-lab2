@@ -60,13 +60,9 @@ def katzenjammer():
             read_csv('./csc365-lab2_datasets/KATZENJAMMER/Vocals.csv', 'vocals')
 
 def f1_data():
-    with open('F1DATASET-populate.sql', 'w') as output_file:
+    with open('CUSTOM-populate.sql', 'w') as output_file:
         with redirect_stdout(output_file):
             # LOTS OF UNNEEDED INFO
-
-            # Status holds the status code and what that code means in the entire data set -- statusId and status
-            read_csv('./f1_data/status.csv', 'status')
-            print()
             # constructorId,constructorRef,name,nationality
             read_csv('./f1_data/constructors.csv', 'constructors', 4)
             print()
