@@ -41,7 +41,7 @@ CREATE TABLE flights(
     FOREIGN KEY (Airline) references airlines(ID),
     FOREIGN KEY (SourceAirport)references airports(AirportCode),
     FOREIGN KEY (DestAirport)references airports(AirportCode),
-    CHECK (SourceAirport != DestAirport)
+    CHECK (SourceAirport <> DestAirport)
 );
 
 SELECT * FROM flights;

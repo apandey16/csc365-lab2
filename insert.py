@@ -33,10 +33,28 @@ def bakery():
             print()
             read_csv('./csc365-lab2_datasets/BAKERY/items.csv', 'items')
     
+def katzenjammer():
+    with open('KATZENJAMMER-populate.sql', 'w') as output_file:
+        with redirect_stdout(output_file):
+            read_csv('./csc365-lab2_datasets/KATZENJAMMER/Albums.csv', 'albums')
+            print()
+            read_csv('./csc365-lab2_datasets/KATZENJAMMER/Band.csv', 'band')
+            print()
+            # Row 10 causes issues, copy from online DB
+            read_csv('./csc365-lab2_datasets/KATZENJAMMER/Songs.csv', 'Songs')
+            print()
+            read_csv('./csc365-lab2_datasets/KATZENJAMMER/Instruments.csv', 'Instruments')
+            print()
+            read_csv('./csc365-lab2_datasets/KATZENJAMMER/Performance.csv', 'Performance')
+            print()
+            read_csv('./csc365-lab2_datasets/KATZENJAMMER/Tracklists.csv', 'tracklists')
+            print()
+            read_csv('./csc365-lab2_datasets/KATZENJAMMER/Vocals.csv', 'vocals')
 
 def main():
     # airlines()
-    bakery()
+    # bakery()
+    katzenjammer()
 
 if __name__ == "__main__":
     main()
